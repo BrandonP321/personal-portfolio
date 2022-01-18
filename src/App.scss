@@ -1,0 +1,10 @@
+@import "./global/styles/baseUI.scss";
+
+* {
+    font-family: $font-code;
+}
+
+body {
+    background-color: $color-body-bg;
+    color: $color-text-primary;
+}

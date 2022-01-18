@@ -1,0 +1,60 @@
+@import "../../global/styles/baseUI.scss";
+
+.mainFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba($color-text-primary, .1);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3rem;
+    font-size: 1rem;
+    color: rgba($color-text-primary, .5);
+}
+
+.socialText,
+.date {
+    padding: 0 1rem;
+}
+
+.leftContent {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    >div {
+        height: 100%;
+    }
+    
+    .socialText {
+
+    }
+
+    .socialIconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid rgba($color-text-primary, .1);
+        width: 3rem;
+        transition: all .2s;
+        cursor: pointer;
+
+        &:last-child {
+            border-right: 2px solid rgba($color-text-primary, .1);
+        }
+
+        &:hover {
+            background-color: #2d333c;
+        }
+
+        .socialIcon {
+
+        }
+    }
+}
+
+.date {
+
+}

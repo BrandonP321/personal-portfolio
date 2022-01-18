@@ -1,0 +1,93 @@
+@import "../../global/styles/baseUI.scss";
+
+.mainHeader {
+    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, .9);
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.windowHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem;
+    color: $color-text-dark;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
+    .windowBtns {
+        display: flex;
+        justify-content: space-between;
+        width: 3.2rem;
+
+        .btn {
+            width: .55rem;
+            height: .55rem;
+            border-radius: 50%;
+
+            &.red {
+                background-color: $color-accent-red;
+            }
+
+            &.yellow {
+                background-color: #ebcb8b;
+            }
+
+            &.green {
+                background-color: #a3be8c;
+            }
+        }
+    }
+
+    .filler {
+        width: 3.2rem;
+    }
+}
+
+.tabsWrapper {
+    display: flex;
+
+    .tab,
+    .fillerTab {
+        background-color: $color-dark;
+        border-color: rgba(255, 255, 255, .12);
+        border-width: 2px;
+        border-left: none;
+    }
+
+    .tab:last-child,
+    .fillerTab {
+        border-right: none;
+    }
+
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .75rem 0;
+        width: 12rem;
+        color: rgba($color-text-primary, .5);
+        font-weight: 400;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &.selected {
+            background-color: $color-body-bg;
+            border-top-color: $color-accent-red;
+            border-top-width: 3px;
+            border-bottom: none;
+            color: $color-accent-gold;
+            font-weight: 700;
+        }
+    }
+
+    .fillerTab {
+        flex-grow: 1;
+    }
+}
+
+.bottomBorder {
+    height: 1.5rem;
+}
