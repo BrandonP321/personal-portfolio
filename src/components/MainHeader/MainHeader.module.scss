@@ -1,9 +1,14 @@
 @import "../../global/styles/baseUI.scss";
 
 .mainHeader {
-    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, .9);
+    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, .35);
     font-weight: 400;
     font-size: .9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-body-bg;
 }
 
 .windowHeader {
@@ -68,6 +73,14 @@
         width: 12rem;
         color: rgba($color-text-primary, .5);
         font-weight: 400;
+
+        @include screenTiny {
+            width: 50%;
+
+            &:nth-child(2) {
+                border-right: none;
+            }
+        }
 
         &:first-child {
             border-left: none;
