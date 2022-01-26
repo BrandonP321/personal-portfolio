@@ -12,6 +12,8 @@
     height: 3rem;
     font-size: 1rem;
     color: rgba($color-text-primary, .5);
+    background-color: $color-body-bg;
+    z-index: 99999999;
 }
 
 .socialText,
@@ -30,12 +32,16 @@
     
     .socialText {
 
+        @include screenTiny {
+            display: none;
+        }
     }
 
     .socialIconWrapper {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
         border-left: 2px solid rgba($color-text-primary, .1);
         width: 3rem;
         transition: all .2s;
@@ -43,6 +49,12 @@
 
         &:last-child {
             border-right: 2px solid rgba($color-text-primary, .1);
+        }
+
+        &:nth-child(2) {
+            @include screenTiny {
+                border-left: none;
+            }
         }
 
         &:hover {
