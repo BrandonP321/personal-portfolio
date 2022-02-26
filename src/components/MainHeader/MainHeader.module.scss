@@ -1,106 +1,196 @@
 @import "../../global/styles/baseUI.scss";
 
+$navContentHeight: 4rem;
+$mainNavZIndex: 1000;
+
 .mainHeader {
-    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, .35);
-    font-weight: 400;
-    font-size: .9rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: $color-body-bg;
+    z-index: $mainNavZIndex;
+    padding: 2rem 0;
+
+    @include screenLarge() {
+        padding: 1rem 0;
+    }
+
+    @include screenMedium() {
+        padding: .5rem 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        background-color: $color-body-bg-dark;
+        transition: all .2s;
+    }
+
+    &.showBg::before {
+        bottom: 0;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    }
+
 }
 
-.windowHeader {
+.flexWrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: .75rem;
-    color: $color-text-dark;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    
-    .windowBtns {
-        display: flex;
-        justify-content: space-between;
-        width: 3.2rem;
+    width: $content-width;
+    max-width: $content-max-width;
+    margin: 0 auto;
+    height: $navContentHeight;
 
-        .btn {
-            width: .55rem;
-            height: .55rem;
-            border-radius: 50%;
-
-            &.red {
-                background-color: $color-accent-red;
-            }
-
-            &.yellow {
-                background-color: #ebcb8b;
-            }
-
-            &.green {
-                background-color: #a3be8c;
-            }
-        }
+    @include screenLarge() {
+        width: 95%;
     }
 
-    .filler {
-        width: 3.2rem;
+    @include screenMedium() {
+        height: auto;
     }
 }
 
-.tabsWrapper {
+.brand {
+    position: relative;
     display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -2px;
 
-    .tab,
-    .fillerTab {
-        background-color: $color-dark;
-        border-color: rgba(255, 255, 255, .12);
-        border-width: 2px;
-        border-left: none;
-    }
-
-    .tab:last-child,
-    .fillerTab {
-        border-right: none;
-    }
-
-    .tab {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: .75rem 0;
-        width: 12rem;
-        color: rgba($color-text-primary, .5);
-        font-weight: 400;
-
-        @include screenTiny {
-            width: 50%;
-
-            &:nth-child(2) {
-                border-right: none;
-            }
+    span {
+        @supports (-webkit-text-stroke: 1px black) {
+            color: $color-primary;
+            -webkit-text-fill-color: $color-body-bg-dark;
+            -webkit-text-stroke: .5px $color-primary;
         }
-
-        &:first-child {
-            border-left: none;
-        }
-
-        &.selected {
-            background-color: $color-body-bg;
-            border-top-color: $color-accent-red;
-            border-top-width: 3px;
-            border-bottom: none;
-            color: $color-accent-gold;
-            font-weight: 700;
-        }
-    }
-
-    .fillerTab {
-        flex-grow: 1;
     }
 }
 
-.bottomBorder {
-    height: 1.5rem;
+.navWrapper {
+    display: flex;
+    margin-left: 7rem;
+
+    @include screenExtraLarge() {
+        margin-left: 4rem;
+    }
+
+    a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        @include blurbFont();
+        font-weight: bold;
+        margin-right: 1.5rem;
+        color: rgba($color-primary, .8);
+        transition: color .2s;
+
+        @include screenMedium() {
+            display: none;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            height: 4px;
+            background-color: $color-accent-blue;
+            opacity: 0;
+            transition: left .2s, right .2s, opacity 0s .2s;
+        }
+        
+        &:hover {
+            color: $color-primary;
+            
+            &::after {
+                left: 0;
+                right: 0;
+                opacity: 1;
+                /* two transitions are needed to ensure that content is 
+                transpartent only after other transitions have finished */
+                transition: all .2s;
+            }
+        }
+    }
+}
+
+.leftContent {
+    display: flex;
+}
+
+.rightContent {
+    display: flex;
+    align-items: center;
+
+    @include screenMedium() {
+        a.socialLink,
+        .contactBtn {
+            display: none;
+        }
+    }
+
+    .socialLink {
+
+    }
+}
+
+.contactBtn {
+    box-shadow: none;
+    margin-left: 4rem;
+    height: $navContentHeight;
+}
+
+.mobileNav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80vw;
+    max-width: 30rem;
+    height: 100vh;
+    background-color: $color-body-bg-dark;
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: $mainNavZIndex + 2;
+
+    &.show {
+        transform: translateX(0);
+    }
+}
+
+.pageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: $mainNavZIndex + 1;
+    transition: opacity .3s;
+
+    &.show {
+        opacity: .4;
+        pointer-events: all;
+    }
+}
+
+.menuIcon {
+    position: relative;
+    display: none;
+    font-size: 2rem;
+
+    @include screenMedium() {
+        display: block;
+    }
 }

@@ -1,47 +1,106 @@
+import { faGit } from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/pro-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
+import { WindowUtils } from '../../utils/WindowUtils';
+import Button from '../Button/Button';
+import FloatingBtn from '../FloatingBtn/FloatingBtn';
 import styles from "./MainHeader.module.scss";
 
-type TPages = "home" | "projects";
+const navLinks = [
+    { title: "Portfolio", url: "#portfolio" },
+    { title: "Skills", url: "#skills" },
+    { title: "Resume", url: "#resume" },
+]
 
-const headerTabs: { name: string; url: string; page: TPages }[] = [
-    { name: "_hello", url: "/", page: "home" },
-    { name: "_projects", url: "/projects", page: "projects" },
+const socialLinks = [
+    { icon: faGit, url: "#" },
+    { icon: faGit, url: "#" },
+    { icon: faGit, url: "#" },
 ]
 
 interface Props {
-    selectedTab: "home" | "projects"
+    
 }
 
 export default function MainHeader(props: Props): ReactElement {
-    const { selectedTab } = props;
+    const offsetToShowBg = 100;
+
+    const [showBg, setShowBg] = useState(window.scrollY >= offsetToShowBg);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    useEffect(() => {
+        document.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => document.removeEventListener("scroll", handleScroll);
+    }, [])
+
+    const handleScroll = () => {
+        requestAnimationFrame(() => {
+            if (window.scrollY >= offsetToShowBg) {
+                setShowBg(true);
+            } else {
+                setShowBg(false);
+            }
+        })
+    }
+
+    const handleMobileMenuIconClick = () => {
+        if (showMobileMenu) {
+            // menu is being hidden
+            WindowUtils.UnlockScroll();
+        } else {
+            // menu is being shown
+            WindowUtils.LockScroll();
+        }
+
+        setShowMobileMenu(!showMobileMenu);
+    }
 
     return (
-        <header className={styles.mainHeader}>
-            <div className={styles.windowHeader}>
-                <div className={styles.windowBtns}>
-                    <div className={classNames(styles.btn, styles.red)}/>
-                    <div className={classNames(styles.btn, styles.yellow)}/>
-                    <div className={classNames(styles.btn, styles.green)}/>
-                </div>
-                brandon_phillips
-                <div className={styles.filler}/>
-            </div>
-            <div className={styles.tabsWrapper}>
-                {headerTabs.map((tab, i) => {
-                    return (
-                        <a 
-                            key={i} 
-                            className={classNames(styles.tab, {[styles.selected]: selectedTab === tab.page})} 
-                            href={tab.url}
-                        >
-                            {tab.name}
+        <>
+            <header className={classNames(styles.mainHeader, {[styles.showBg]: showBg})}>
+                <div className={styles.flexWrapper}>
+                    <div className={styles.leftContent}>
+                        <a href={"/"} className={styles.brand}>
+                            B<span>P</span>.
                         </a>
-                    )
-                })}
-                <div className={styles.fillerTab}/>
+                        <nav className={styles.navWrapper}>
+                            {navLinks.map((link, i) => {
+                                return (
+                                    <a href={link.url} key={i}>{link.title}</a>
+                                )
+                            })}
+                        </nav>
+                    </div>
+                    <div className={styles.rightContent}>
+                        {socialLinks.map((link, i) => {
+                            return (
+                                <FloatingBtn 
+                                    className={styles.socialLink} 
+                                    url={link.url} 
+                                    icon={link.icon}
+                                    key={i}
+                                />
+                            )
+                        })}
+
+                        <Button
+                            className={styles.contactBtn}
+                            animate
+                        >Contact Me</Button>
+
+                        <FontAwesomeIcon className={styles.menuIcon} onClick={handleMobileMenuIconClick} icon={faBars}/>
+                    </div>
+                </div>
+
+            </header>
+            <div className={classNames(styles.pageOverlay, {[styles.show]: showMobileMenu})} onClick={handleMobileMenuIconClick}/>
+            <div className={classNames(styles.mobileNav, {[styles.show]: showMobileMenu})}>
+
             </div>
-            <div className={styles.bottomBorder}/>
-        </header>
+        </>
     )
 }
