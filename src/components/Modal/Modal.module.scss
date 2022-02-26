@@ -1,0 +1,84 @@
+@import "../../global/styles/baseUI.scss";
+
+.modal {
+    opacity: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 9999999;
+
+    &.show {
+        opacity: 1;
+        width: 100vw;
+        
+        .contentWrapper {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .pageOverlay {
+            opacity: 1;
+        }
+
+        .modalExitIcon {
+            opacity: 1;
+        }
+    }
+
+    &.fadeOut {
+
+        .pageOverlay {
+            opacity: 0;
+        }
+
+        .contentWrapper {
+            transform: scale(.5);
+            opacity: 0;
+        }
+
+        .modalExitIcon {
+            opacity: 0;
+        }
+    }
+}
+
+.modalExitIcon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgba($color-primary, .6);
+    transition: color .2s, opacity .35s;
+    font-size: 2rem;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover {
+        color: rgba($color-primary, .9);
+    }
+}
+
+.pageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.contentWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transform: scale(.5);
+    opacity: 0;
+    transition: transform .5s, opacity .3s;
+}
