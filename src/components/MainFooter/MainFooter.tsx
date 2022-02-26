@@ -7,6 +7,11 @@ import {} from "@fortawesome/pro-solid-svg-icons";
 import {} from "@fortawesome/pro-regular-svg-icons"
 import React, { ReactElement } from 'react'
 import styles from "./MainFooter.module.scss";
+import loc from "../../data/localization/Footer.json";
+import Button from '../Button/Button';
+import OutlinedSectionHeading from '../OutlinedSectionHeading/OutlinedSectionHeading';
+import { socials } from '../../data/socials';
+import FloatingBtn from '../FloatingBtn/FloatingBtn';
 
 interface Props {
     
@@ -15,19 +20,39 @@ interface Props {
 export default function MainFooter(props: Props): ReactElement {
     return (
         <footer className={styles.mainFooter}>
-            <div className={styles.leftContent}>
-                <p className={styles.socialText}>find me on:</p>
-                <a href={"https://github.com/BrandonP321"} target={"_blank"} rel={"noreferrer"} className={styles.socialIconWrapper}>
-                    <FontAwesomeIcon icon={faGithub} className={styles.socialIcon}/>
-                </a>
-                <a href={"https://www.linkedin.com/in/brandon-phillips-dev/"} target={"_blank"} rel={"noreferrer"} className={styles.socialIconWrapper}>
-                    <FontAwesomeIcon icon={faLinkedinIn} className={styles.socialIcon}/>
-                </a>
-                <a href={"mailto:brandon.phillips@bphillips.dev"} className={styles.socialIconWrapper}>
-                    <FontAwesomeIcon icon={faEnvelope} className={styles.socialIcon}/>
-                </a>
+            <div className={styles.topSpacer}/>
+            <div className={styles.bottomWrapper}>
+                <div className={styles.contentWrapper}>
+                    <div className={styles.contactBlock}>
+                        <div className={styles.content}>
+                            <OutlinedSectionHeading
+                                heading={"CONTACT"}
+                                alignment={"right"}
+                                className={styles.bgHeading}
+                            />
+                            <h2 className={styles.heading}>{loc.contactHeading}</h2>
+                            <p className={styles.blurb}>{loc.contactBlurb}</p>
+                            <Button animate>Get In Touch</Button>
+                        </div>
+                    </div>
+                    <div className={styles.bottomContent}>
+                        <div className={styles.linksWrapper}>
+                            {socials.map((s, i) => {
+                                return (
+                                    <FloatingBtn
+                                        key={i}
+                                        url={s.url}
+                                        className={styles.link}
+                                        icon={s.icon}
+                                    />
+                                )
+                            })}
+                        </div>
+                        <div className={styles.divider}/>
+                        <p className={styles.copyright}>{loc.copyright}</p>
+                    </div>
+                </div>
             </div>
-            <p className={styles.date}>15:56 24/11/2021</p>
         </footer>
     )
 }

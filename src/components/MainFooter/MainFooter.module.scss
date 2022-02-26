@@ -1,72 +1,120 @@
 @import "../../global/styles/baseUI.scss";
 
 .mainFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 2px solid rgba($color-text-primary, .1);
-    position: fixed;
+
+}
+
+.topSpacer,
+.contentWrapper {
+    padding-top: 11rem;
+
+    @include screenMobile() {
+        padding-top: 9.5rem;
+    }
+}
+
+.contentWrapper {
+    position: relative;
+    width: $content-width;
+    max-width: $content-max-width;
+    margin: 0 auto;
+}
+
+.topSpacer {
+
+}
+
+.bottomWrapper {
+    background-color: $color-body-bg-dark;
+}
+
+.contactBlock {
+    background-color: #434657;
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 3rem;
-    font-size: 1rem;
-    color: rgba($color-text-primary, .5);
-    background-color: $color-body-bg;
-    z-index: 99999999;
-}
-
-.socialText,
-.date {
-    padding: 0 1rem;
-}
-
-.leftContent {
     display: flex;
-    height: 100%;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: translateY(-50%);
 
-    >div {
-        height: 100%;
-    }
-    
-    .socialText {
+    .bgHeading {
+        right: -2rem;
+        top: auto;
+        bottom: 2rem;
 
-        @include screenTiny {
+        @include screenMedium() {
+            right: 0;
+        }
+
+        @include screenMobile() {
             display: none;
         }
-    }
 
-    .socialIconWrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        border-left: 2px solid rgba($color-text-primary, .1);
-        width: 3rem;
-        transition: all .2s;
-        cursor: pointer;
+        h2 {
 
-        &:last-child {
-            border-right: 2px solid rgba($color-text-primary, .1);
-        }
-
-        &:nth-child(2) {
-            @include screenTiny {
-                border-left: none;
+            @include screenLarge() {
+                font-size: 11rem;
+            }
+    
+            @include screenMedium() {
+                font-size: 16vw;
             }
         }
+    }
 
-        &:hover {
-            background-color: #2d333c;
-        }
+    .content {
+        max-width: 45rem;
+        padding: 2rem;
+    }
 
-        .socialIcon {
+    .heading {
+        @include headingFont();
+    }
 
-        }
+    .blurb {
+        @include blurbFont();
+        margin: 1rem 0 4rem 0;
+    }
+
+    .contactBtn {
+
     }
 }
 
-.date {
+.bottomContent {
+    padding: 3rem 0 2rem 0;
 
+    .linksWrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .link {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .divider {
+        margin: 3rem auto 4rem auto;
+        width: 90%;
+        max-width: 50rem;
+        height: 2px;
+        background-color: #434657;
+        opacity: .6;
+
+        @include screenMobile() {
+            margin: 1rem auto 2rem auto;
+        }
+    }
+
+    .copyright {
+        font-size: 1.2rem;
+        text-align: center;
+        color: rgba($color-primary, .4);        
+    }
 }
