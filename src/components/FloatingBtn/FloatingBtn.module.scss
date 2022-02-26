@@ -1,0 +1,24 @@
+@import "../../global/styles/baseUI.scss";
+
+.floatingBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 .5rem;
+    background-color: #434657;
+    border-radius: .7rem;
+    transition: all .2s;
+
+    &:hover {
+        color: $color-accent-blue;
+        box-shadow: 0 0.3rem 0.7rem 0 rgba($color-accent-blue, 0.22);
+        transform: translateY(-0.5rem);
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+}
