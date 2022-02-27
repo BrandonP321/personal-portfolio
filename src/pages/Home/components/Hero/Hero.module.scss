@@ -1,0 +1,72 @@
+@import "../../../../global/styles/baseUI.scss";
+
+.hero {
+    background-color: $color-body-bg-dark;
+    
+    
+    .contentWrapper {
+        @include responsiveContentWrapper();
+        padding: 15rem 0 10rem 0;
+        position: relative;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 45rem;
+        
+        @include screenLarge() {
+            background-size: 50%;
+        }
+
+        @include screenMedium() {
+            background-size: 30rem;
+        }
+
+        @include screenMobile() {
+            padding: 65% 0 21rem 0;
+            background-size: 90%;
+            background-position: 75% 4rem;
+        }
+
+        @include screenTiny() {
+            background-position: 75% 2rem;
+        }
+    }
+
+    h1 {
+        font-size: 6rem;
+        font-weight: 900;
+
+        @include screenMobile() {
+            font-size: 4rem;
+        }
+
+        span {
+            @supports (-webkit-text-stroke: 1px black) {
+                color: $color-primary;
+                -webkit-text-fill-color: $color-body-bg-dark;
+                -webkit-text-stroke: .5px $color-primary;
+            }
+        }
+    }
+
+    .textWrapper {
+        width: 50%;
+
+        @include screenMobile {
+            width: 100%;
+        }
+    }
+
+    .blurb {
+        @include blurbFont();
+        max-width: 40rem;
+        margin: 2rem 0 4rem 0;
+
+        @include screenMobile() {
+            margin: 2rem 0;
+        }
+    }
+
+    .btnGroup {
+
+    }
+}
