@@ -1,0 +1,50 @@
+@import "../../global/styles/baseUI.scss";
+
+.wrapper {
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+
+    &.right {
+        left: initial;
+        right: 15rem;
+    }
+
+    @include screenLarge() {
+
+        &.right {
+            right: 7rem;
+        }
+    }
+
+    @include screenMedium() {
+        width: 100%;
+        left: 0;
+
+        &.right {
+            right: 0;
+        }
+    }
+}
+
+.heading {
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba($color-primary, .5);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 4px rgba($color-primary, .1);
+
+    @include screenLarge() {
+        font-size: 9rem;
+    }
+
+    @include screenMedium() {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    @include screenTiny() {
+        -webkit-text-stroke-width: 2px;
+    }
+}
