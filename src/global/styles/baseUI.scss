@@ -1,5 +1,63 @@
 @forward "colors";
-@forward "responsiveSize";
 @forward "fonts";
+@forward "responsiveSize";
+
+@mixin responsiveBgImg() {
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+@mixin responsiveContentWrapper() {
+    width: $content-width;
+    max-width: $content-max-width;
+    margin: 0 auto;
+}
+
+$heading-font-large: 3.5rem;
+$heading-font-medium: 2rem;
+$heading-font-mobile: 1.8rem;
+$heading-font-tiny: 1.5rem;
+
+@mixin headingFont() {
+    font-weight: 900;
+    font-size: $heading-font-large;
+    color: white;
+    
+    @include screenMedium() {
+        font-size: $heading-font-medium;
+        line-height: 2.5rem;
+    }
+    
+    @include screenMobile() {
+        font-size: $heading-font-mobile;
+    }
+    
+    @include screenTiny() {
+        font-size: $heading-font-tiny;
+    }
+}
+
+$blurb-font-large: 1.5rem;
+$blurb-font-mobile: 1.2rem;
+$blurb-font-tiny: 1rem;
+
+@mixin blurbFont() {
+    font-size: $blurb-font-large;
+    color: $color-text-primary;
+    line-height: 2.5rem;
+    
+    @include screenMobile() {
+        font-size: $blurb-font-mobile;
+        line-height: 1.8rem;
+    }
+    
+    @include screenTiny() {
+        font-size: $blurb-font-tiny;
+        line-height: 1.5rem;
+    }
+}
 
 $main-header-height: 109px;
+$content-width: 90%;
+$content-max-width: 100rem;
