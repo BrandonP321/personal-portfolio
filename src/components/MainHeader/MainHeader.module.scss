@@ -9,7 +9,7 @@ $mainNavZIndex: 1000;
     left: 0;
     right: 0;
     z-index: $mainNavZIndex;
-    padding: 2rem 0;
+    padding: 1rem 0;
 
     @include screenLarge() {
         padding: 1rem 0;
@@ -79,13 +79,14 @@ $mainNavZIndex: 1000;
         margin-left: 4rem;
     }
 
+    // project link
     a {
         position: relative;
         display: flex;
         align-items: center;
         @include blurbFont();
         font-weight: bold;
-        margin-right: 1.5rem;
+        margin-right: 2rem;
         color: rgba($color-primary, .8);
         transition: color .2s;
 
@@ -142,12 +143,6 @@ $mainNavZIndex: 1000;
     .socialLink {
 
     }
-}
-
-.contactBtn {
-    box-shadow: none;
-    margin-left: 4rem;
-    height: $navContentHeight;
 }
 
 .mobileNav {

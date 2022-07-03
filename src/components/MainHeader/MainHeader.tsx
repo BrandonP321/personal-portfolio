@@ -1,4 +1,5 @@
-import { faGit } from '@fortawesome/free-brands-svg-icons';
+import { faGit, faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
@@ -12,12 +13,13 @@ const navLinks = [
     { title: "Portfolio", url: "#portfolio" },
     { title: "Skills", url: "#skills" },
     { title: "Resume", url: "#resume" },
+    { title: "Contact", url: "#contact" }
 ]
 
 const socialLinks = [
-    { icon: faGit, url: "#" },
-    { icon: faGit, url: "#" },
-    { icon: faGit, url: "#" },
+    { icon: faGithub, url: "https://github.com/BrandonP321" },
+    { icon: faLinkedinIn, url: "https://www.linkedin.com/in/brandon-phillips-dev/" },
+    { icon: faEnvelope, url: "mailto:brandon.phillips@bphillips.dev" },
 ]
 
 interface Props {
@@ -86,11 +88,6 @@ export default function MainHeader(props: Props): ReactElement {
                                 />
                             )
                         })}
-
-                        <Button
-                            className={styles.contactBtn}
-                            animate
-                        >Contact Me</Button>
 
                         <FontAwesomeIcon className={styles.menuIcon} onClick={handleMobileMenuIconClick} icon={faBars}/>
                     </div>
