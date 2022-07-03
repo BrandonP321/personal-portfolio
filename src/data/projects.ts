@@ -3,6 +3,7 @@ import witchQueenImg from "../media/img/projects/wq_project.jpg";
 import annivImg from "../media/img/projects/anniv_project.jpg";
 import freeToPlayImg from "../media/img/projects/free_to_play_project.jpg";
 import seasonSplicerImg from "../media/img/projects/s14_project.jpg";
+import spotifyCloneImg from "../media/img/projects/spotify_clone_project.jpg";
 
 export const projects = [
     {
@@ -41,13 +42,13 @@ export const projects = [
         repoUrl: "",
         eyebrow: "React, TypeScript, SCSS"
     },
-    // {
-    //     name: "Destiny 2: 30th Anniversary",
-    //     descLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    //     descShort: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //     siteUrl: "https://bungie.net/Anniversary",
-    //     image: annivImg,
-    //     repoUrl: "",
-    //     eyebrow: "React, TypeScript, SCSS"
-    // },
+    {
+        name: "Spotify App Clone",
+        descLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        descShort: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        // siteUrl: "https://bungie.net/WitchQueen",
+        image: spotifyCloneImg,
+        repoUrl: "https://github.com/BrandonP321/spotify-clone",
+        eyebrow: "React Native, TypeScript, Express"
+    },
 ]
