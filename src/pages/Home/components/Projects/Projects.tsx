@@ -43,7 +43,7 @@ export default function Projects(props: Props) {
               </div>
               <a
                 className={styles.imgWrapper}
-                href={p.siteUrl}
+                href={p.siteUrl ?? p.repoUrl}
                 target={"_blank"}
                 rel={"noreferrer"}
               >
