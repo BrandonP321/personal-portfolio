@@ -29,7 +29,7 @@ html {
     width: 1rem;
 
     @include screenMobile() {
-        width: initial;
+        // width: initial;
     }
 }
 
@@ -37,7 +37,7 @@ html {
     background-color: #38393e;
 
     @include screenMobile() {
-        background-color: initial;
+        // background-color: initial;
     }
 }
 
@@ -47,15 +47,15 @@ html {
     border-radius: 1rem;
 
     @include screenMobile() {
-        border-radius: unset;
-        background-color: unset;
+        // border-radius: unset;
+        // background-color: unset;
     }
     
     &:hover {
         background-color: rgba(#5d5e62, 1);
 
         @include screenMobile() {
-            background-color: unset;
+            // background-color: unset;
         }
     }
 }

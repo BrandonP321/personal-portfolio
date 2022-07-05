@@ -23,7 +23,7 @@ const socialLinks = [
 ]
 
 interface Props {
-    
+
 }
 
 export default function MainHeader(props: Props): ReactElement {
@@ -61,9 +61,13 @@ export default function MainHeader(props: Props): ReactElement {
         setShowMobileMenu(!showMobileMenu);
     }
 
+    const handleMobileNavOptionClick = () => {
+        setShowMobileMenu(false);
+    }
+
     return (
         <>
-            <header className={classNames(styles.mainHeader, {[styles.showBg]: showBg})}>
+            <header className={classNames(styles.mainHeader, { [styles.showBg]: showBg, [styles.hide]: showMobileMenu })}>
                 <div className={styles.flexWrapper}>
                     <div className={styles.leftContent}>
                         <a href={"/"} className={styles.brand}>
@@ -72,7 +76,7 @@ export default function MainHeader(props: Props): ReactElement {
                         <nav className={styles.navWrapper}>
                             {navLinks.map((link, i) => {
                                 return (
-                                    <a href={link.url} key={i}>{link.title}</a>
+                                    <a href={link.url} key={i} className={styles.navLink}>{link.title}</a>
                                 )
                             })}
                         </nav>
@@ -80,23 +84,41 @@ export default function MainHeader(props: Props): ReactElement {
                     <div className={styles.rightContent}>
                         {socialLinks.map((link, i) => {
                             return (
-                                <FloatingBtn 
-                                    className={styles.socialLink} 
-                                    url={link.url} 
+                                <FloatingBtn
+                                    className={styles.socialLink}
+                                    url={link.url}
                                     icon={link.icon}
                                     key={i}
                                 />
                             )
                         })}
 
-                        <FontAwesomeIcon className={styles.menuIcon} onClick={handleMobileMenuIconClick} icon={faBars}/>
+                        <FontAwesomeIcon className={styles.menuIcon} onClick={handleMobileMenuIconClick} icon={faBars} />
                     </div>
                 </div>
 
             </header>
-            <div className={classNames(styles.pageOverlay, {[styles.show]: showMobileMenu})} onClick={handleMobileMenuIconClick}/>
-            <div className={classNames(styles.mobileNav, {[styles.show]: showMobileMenu})}>
-
+            <div className={classNames(styles.pageOverlay, { [styles.show]: showMobileMenu })} onClick={handleMobileMenuIconClick} />
+            <div className={classNames(styles.mobileNav, { [styles.show]: showMobileMenu })}>
+                <div className={styles.navLinks}>
+                    {navLinks.map((link, i) => {
+                        return (
+                            <a href={link.url} key={i} className={styles.mobileNavLink}>{link.title}</a>
+                        )
+                    })}
+                </div>
+                <div className={styles.socials}>
+                    {socialLinks.map((link, i) => {
+                        return (
+                            <FloatingBtn
+                                className={styles.socialLink}
+                                url={link.url}
+                                icon={link.icon}
+                                key={i}
+                            />
+                        )
+                    })}
+                </div>
             </div>
         </>
     )

@@ -10,6 +10,7 @@ $mainNavZIndex: 1000;
     right: 0;
     z-index: $mainNavZIndex;
     padding: 1rem 0;
+    transition: transform 0.3s;
 
     @include screenLarge() {
         padding: 1rem 0;
@@ -35,6 +36,9 @@ $mainNavZIndex: 1000;
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     }
 
+    &.hide {
+        transform: translateY(-100%);
+    }
 }
 
 .flexWrapper {
@@ -79,8 +83,7 @@ $mainNavZIndex: 1000;
         margin-left: 4rem;
     }
 
-    // project link
-    a {
+    .navLink {
         position: relative;
         display: flex;
         align-items: center;
@@ -156,9 +159,45 @@ $mainNavZIndex: 1000;
     transform: translateX(-100%);
     transition: transform .3s;
     z-index: $mainNavZIndex + 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
 
     &.show {
         transform: translateX(0);
+    }
+
+    .navLinks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobileNavLink {
+        @include blurbFont();
+        font-weight: bold;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid $color-body-bg;
+
+        @include screenMobile() {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            background-color: $color-body-bg;
+        }
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        .socialLink {
+            margin-bottom: 1rem;
+        }
     }
 }
 
@@ -184,6 +223,7 @@ $mainNavZIndex: 1000;
     position: relative;
     display: none;
     font-size: 2rem;
+    cursor: pointer;
 
     @include screenMedium() {
         display: block;
