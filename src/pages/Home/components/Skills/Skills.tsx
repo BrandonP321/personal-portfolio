@@ -26,7 +26,6 @@ export default function Skills(props: Props) {
     }, []);
 
     const handleSkillImageLoad = () => {
-        console.log("loaded")
         loadedSkillImagesCount.current++;
 
         if (loadedSkillImagesCount.current >= SkillGroups[0].skillImages.length) {
