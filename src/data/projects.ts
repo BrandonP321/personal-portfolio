@@ -42,7 +42,7 @@ const SpotifyCloneProject = {
     // siteUrl: "https://bungie.net/WitchQueen",
     image: spotifyCloneImg,
     repoUrl: "https://github.com/BrandonP321/spotify-clone",
-    eyebrow: "React Native, TypeScript, Express"
+    eyebrow: "React Native, TypeScript, Redux, Express"
 }
 
 const SeasonLostProject = {
