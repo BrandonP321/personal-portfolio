@@ -4,6 +4,7 @@
     position: absolute;
     top: 6rem;
     left: 2rem;
+    pointer-events: none;
 
     &.right {
         left: initial;
