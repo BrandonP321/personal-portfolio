@@ -10,7 +10,7 @@ import FloatingBtn from '../FloatingBtn/FloatingBtn';
 import styles from "./MainHeader.module.scss";
 
 const navLinks = [
-    { title: "Portfolio", url: "#portfolio" },
+    { title: "Projects", url: "#projects" },
     { title: "Skills", url: "#skills" },
     { title: "Resume", url: "#resume" },
     { title: "Contact", url: "#contact" }

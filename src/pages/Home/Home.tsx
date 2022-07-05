@@ -11,13 +11,16 @@ type Props = {};
 export default function Home(props: Props) {
   return (
     <div className={styles.home}>
-      <MainHeader/>
+      <MainHeader />
       <div className={styles.homeContent}>
-        <Hero/>
-        <Skills/>
-        <Projects/>
+        <Hero />
+        <div id={"skills"} className={styles.sectionAnchor} />
+        <Skills />
+        <div id={"projects"} className={styles.sectionAnchor} />
+        <Projects />
       </div>
-      <MainFooter/>
+      <div id={"contact"} className={styles.sectionAnchor} />
+      <MainFooter />
     </div>
   );
 }
