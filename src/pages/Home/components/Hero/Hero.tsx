@@ -18,7 +18,7 @@ export default function Hero(props: Props) {
                     <p className={styles.blurb}>{loc.blurb}</p>
                 </div>
                 <div className={styles.btnGroup}>
-                    <Button animate>{loc.myWorkBtnTitle}</Button>
+                    <Button url={"#projects"} animate>{loc.myWorkBtnTitle}</Button>
                 </div>
             </div>
         </div>
