@@ -21,6 +21,7 @@ import websocketLogo from "../media/img/skills/backend/websocket.png";
 import aiLogo from "../media/img/skills/design/ai.png";
 import psLogo from "../media/img/skills/design/ps.png";
 import xdLogo from "../media/img/skills/design/xd.png";
+import figmaLogo from "../media/img/skills/design/figma.png";
 
 /* VCS LOGOS */
 import gitLogo from "../media/img/skills/vcs/git.png";
@@ -65,6 +66,7 @@ const designSkillGroup: TSkillGroup = {
         { img: psLogo, name: "Adobe Photoshop" }, 
         { img: aiLogo, name: "Adobe Illustrator" }, 
         { img: xdLogo, name: "Adobe XD" }, 
+        { img: figmaLogo, name: "Figma" }
     ]
 }
 
