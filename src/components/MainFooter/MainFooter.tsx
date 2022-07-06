@@ -32,7 +32,7 @@ export default function MainFooter(props: Props): ReactElement {
                             />
                             <h2 className={styles.heading}>{loc.contactHeading}</h2>
                             <p className={styles.blurb}>{loc.contactBlurb}</p>
-                            <Button animate>Get In Touch</Button>
+                            <Button url={"mailto:brandon.phillips@bphillips.dev"} animate>Get In Touch</Button>
                         </div>
                     </div>
                     <div className={styles.bottomContent}>
