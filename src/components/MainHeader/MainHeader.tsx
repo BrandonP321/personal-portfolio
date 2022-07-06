@@ -3,7 +3,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useCallback, useEffect, useState } from 'react'
 import { WindowUtils } from '../../utils/WindowUtils';
 import Button from '../Button/Button';
 import FloatingBtn from '../FloatingBtn/FloatingBtn';
@@ -49,7 +49,7 @@ export default function MainHeader(props: Props): ReactElement {
         })
     }
 
-    const handleMobileMenuIconClick = () => {
+    const toggleScrollLock = useCallback(() => {
         if (showMobileMenu) {
             // menu is being hidden
             WindowUtils.UnlockScroll();
@@ -57,11 +57,15 @@ export default function MainHeader(props: Props): ReactElement {
             // menu is being shown
             WindowUtils.LockScroll();
         }
+    }, [showMobileMenu])
 
+    const handleMobileMenuIconClick = () => {
+        toggleScrollLock();
         setShowMobileMenu(!showMobileMenu);
     }
 
     const handleMobileNavOptionClick = () => {
+        toggleScrollLock();
         setShowMobileMenu(false);
     }
 
@@ -103,7 +107,7 @@ export default function MainHeader(props: Props): ReactElement {
                 <div className={styles.navLinks}>
                     {navLinks.map((link, i) => {
                         return (
-                            <a href={link.url} key={i} className={styles.mobileNavLink}>{link.title}</a>
+                            <a href={link.url} key={i} className={styles.mobileNavLink} onClick={handleMobileNavOptionClick}>{link.title}</a>
                         )
                     })}
                 </div>

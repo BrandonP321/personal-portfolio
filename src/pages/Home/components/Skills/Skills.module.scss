@@ -128,10 +128,12 @@
 }
 
 .skillGroupSelector {
+    @include hiddenScrollBar();
     display: flex;
     position: relative;
     justify-content: center;
     margin: 0 auto;
+    overflow: hidden;
     overflow-x: auto;
     padding: 0 5vw;
     width: 100%;
