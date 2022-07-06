@@ -3,6 +3,7 @@ import styles from "./Hero.module.scss";
 import heroLoc from "../../../../data/localization/Home.json"
 import Button from '../../../../components/Button/Button';
 import symbolBg from "../../../../media/img/hero/code-symbol.jpg";
+import symbolBgSmall from "../../../../media/img/hero/code-symbol-small.png"
 
 type Props = {};
 
@@ -11,7 +12,7 @@ export default function Hero(props: Props) {
 
     return (
         <div className={styles.hero}>
-            <div className={styles.contentWrapper} style={{ backgroundImage: `url(${symbolBg})` }}>
+            <div className={styles.contentWrapper} style={{ backgroundImage: `url(${symbolBg}), url(${symbolBgSmall})` }}>
                 {/* <div className={styles.heroBg} /> */}
                 <div className={styles.textWrapper}>
                     <h1 dangerouslySetInnerHTML={{ __html: loc.title }} />
