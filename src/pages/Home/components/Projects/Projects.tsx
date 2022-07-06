@@ -40,7 +40,7 @@ export default function Projects(props: Props) {
                     >View This Site <FontAwesomeIcon icon={faArrowRight} /></a>
                   }
                   {p.repoUrl &&
-                    <a href={p.repoUrl} target={"_blank"} rel={"noreferrer"}>GitHub Repo</a>
+                    <a href={p.repoUrl} target={"_blank"} rel={"noreferrer"}>GitHub Repo <FontAwesomeIcon icon={faArrowRight} /></a>
                   }
                 </div>
               </div>
