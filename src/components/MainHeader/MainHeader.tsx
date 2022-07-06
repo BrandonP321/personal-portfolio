@@ -1,11 +1,9 @@
-import { faGit, faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React, { ReactElement, useCallback, useEffect, useState } from 'react'
+import { socials } from '../../data/socials';
 import { WindowUtils } from '../../utils/WindowUtils';
-import Button from '../Button/Button';
 import FloatingBtn from '../FloatingBtn/FloatingBtn';
 import styles from "./MainHeader.module.scss";
 
@@ -14,12 +12,6 @@ const navLinks = [
     { title: "Skills", url: "#skills" },
     { title: "Resume", url: "#resume" },
     { title: "Contact", url: "#contact" }
-]
-
-const socialLinks = [
-    { icon: faGithub, url: "https://github.com/BrandonP321" },
-    { icon: faLinkedinIn, url: "https://www.linkedin.com/in/brandon-phillips-dev/" },
-    { icon: faEnvelope, url: "mailto:brandon.phillips@bphillips.dev" },
 ]
 
 interface Props {
@@ -86,13 +78,14 @@ export default function MainHeader(props: Props): ReactElement {
                         </nav>
                     </div>
                     <div className={styles.rightContent}>
-                        {socialLinks.map((link, i) => {
+                        {socials.map((link, i) => {
                             return (
                                 <FloatingBtn
                                     className={styles.socialLink}
                                     url={link.url}
                                     icon={link.icon}
                                     key={i}
+                                    title={link.title}
                                 />
                             )
                         })}
@@ -112,13 +105,14 @@ export default function MainHeader(props: Props): ReactElement {
                     })}
                 </div>
                 <div className={styles.socials}>
-                    {socialLinks.map((link, i) => {
+                    {socials.map((link, i) => {
                         return (
                             <FloatingBtn
                                 className={styles.socialLink}
                                 url={link.url}
                                 icon={link.icon}
                                 key={i}
+                                title={link.title}
                             />
                         )
                     })}

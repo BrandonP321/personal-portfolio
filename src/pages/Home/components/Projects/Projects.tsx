@@ -52,7 +52,7 @@ export default function Projects(props: Props) {
               >
                 <div className={styles.tiltedBg} />
                 <div className={styles.innerImgWrapper}>
-                  <img className={styles.projectImg} src={p.image} alt={""} />
+                  <img className={styles.projectImg} src={p.image} alt={p.name} />
                 </div>
               </a>
             </div>

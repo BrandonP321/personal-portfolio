@@ -8,10 +8,11 @@ type Props = {
     url: string;
     className?: string;
     icon: IconDefinition;
+    title?: string;
 }
 
 export default function FloatingBtn(props: Props) {
-    const { url, className, icon } = props;
+    const { url, className, icon, title } = props;
 
     return (
         <a 
@@ -19,6 +20,7 @@ export default function FloatingBtn(props: Props) {
             href={url} 
             target={"_blank"} 
             rel={"noreferrer"}
+            aria-label={title}
         ><FontAwesomeIcon icon={icon} className={styles.icon}/></a>
     )
 }

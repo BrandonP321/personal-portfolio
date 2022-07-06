@@ -117,6 +117,7 @@ const SkillImg = (props: TSkillGroup["skillImages"][number] & { onImgLoad: () =>
                 onMouseOut={handleMouseLeave}
                 /* On load, call 'onImgLoad' prop if skill is in first slide of skills carousel */
                 onLoad={() => SkillGroups[0].skillImages.findIndex(img => img.name === props.name) && props.onImgLoad()}
+                alt={props.name}
             />
             <div
                 className={styles.imgTitleBox}
