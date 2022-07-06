@@ -28,6 +28,9 @@ export default function Projects(props: Props) {
               <div className={styles.textWrapper}>
                 <p className={styles.eyebrow}>{p.eyebrow}</p>
                 <h3 className={styles.title}>{p.name}</h3>
+                {p.descShort &&
+                  <p className={styles.desc}>{p.descShort}</p>
+                }
                 <div className={styles.btnsWrapper}>
                   {p.siteUrl &&
                     <a

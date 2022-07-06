@@ -79,6 +79,16 @@
             @include headingFont();
         }
 
+        .desc {
+            @include blurbFont();
+            margin-top: 1rem;
+            line-height: 2rem;
+
+            @include screenMobile() {
+                margin-top: 0.5rem;
+            }
+        }
+
         .btnsWrapper {
             display: flex;
             margin-top: 4rem;
@@ -115,6 +125,10 @@
                         left: 0;
                         right: 0;
                     }
+                }
+
+                svg {
+                    transform: rotate(-45deg);
                 }
             }
         }

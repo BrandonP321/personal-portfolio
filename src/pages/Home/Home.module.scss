@@ -6,6 +6,10 @@
 
 .homeContent {
     padding: 0 0 10rem 0;
+
+    @include screenTiny() {
+        padding-bottom: 5rem;
+    }
 }
 
 .sectionAnchor {
