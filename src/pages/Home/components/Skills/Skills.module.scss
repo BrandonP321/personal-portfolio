@@ -6,16 +6,16 @@
 }
 
 .sectionContent .sectionHeading {
-    top: 3rem;
+    top: -5rem;
     right: 5rem;
 
     @include screenMedium() {
-        top: 1rem;
+        // top: 1rem;
         right: 0;
     }
 
     @include screenMobile() {
-        top: 1rem;
+        top: -7rem;
 
         h2 {
             font-size: 21vw;
@@ -23,7 +23,7 @@
     }
 
     @include screenTiny() {
-        top: 2rem;
+        // top: 2rem;
     }
 }
 
@@ -35,15 +35,19 @@
     transition: padding-bottom 0.5s;
     
     &.top {
-        padding-top: 20rem;
+        padding-top: 12rem;
+
+        @include screenLarge() {
+            padding-top: 7rem;
+        }
 
         @include screenMedium() {
-            padding-top: 15rem;
+            padding-top: 8rem;
         }
     
         @include screenMobile() {
             // padding-top: 17rem;
-            padding-top: calc(21vw + 7rem);
+            padding-top: calc(21vw - 3rem);
         }
     
         @include screenTiny() {
@@ -53,7 +57,6 @@
     &.bottom {
 
     }
-
 }
 
 .blockAspectRatioWrapper {
@@ -61,64 +64,6 @@
 
     @include screenTiny() {
         display: none;
-    }
-}
-
-.floatingBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 8rem;
-    background-color: #434657;
-    border-radius: 2rem;
-    transform: translateY(-50%);
-
-    @include screenExtraLarge() {
-        padding: 3rem 8rem;
-    }
-
-    @include screenLarge() {
-        padding: 3rem 2rem 1rem 2rem;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    @include screenMobile() {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 3rem 0;
-    }
-
-    .skillLogo {
-        margin-right: 1rem;
-        height: 4rem;
-
-        @include screenExtraLarge() {
-            height: 3rem;
-        }
-
-        @include screenLarge() {
-            margin-bottom: 2rem;
-        }
-
-        @include screenMobile() {
-            height: auto;
-            max-width: 14rem;
-            max-height: 4rem;
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
     }
 }
 

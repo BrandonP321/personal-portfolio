@@ -21,6 +21,7 @@ export default function Hero(props: Props) {
                     <Button url={"#projects"} animate>{loc.myWorkBtnTitle}</Button>
                 </div>
             </div>
+            <div className={styles.bottomGradient}/>
         </div>
     );
 }

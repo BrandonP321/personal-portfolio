@@ -55,7 +55,6 @@ export default function Skills(props: Props) {
                     alignment={"right"}
                 />
 
-                <FloatingSkillBar />
             </div>
             <div className={styles.skillsCarouselOuterContainer}>
 
