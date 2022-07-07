@@ -79,6 +79,10 @@
     .blurb {
         @include blurbFont();
         margin: 1rem 0 4rem 0;
+
+        @include screenMobile() {
+            margin-bottom: 2rem;
+        }
     }
 
     .contactBtn {
