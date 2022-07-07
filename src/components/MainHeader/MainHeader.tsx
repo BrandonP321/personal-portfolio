@@ -10,7 +10,7 @@ import styles from "./MainHeader.module.scss";
 const navLinks = [
     { title: "Projects", url: "#projects" },
     { title: "Skills", url: "#skills" },
-    { title: "Resume", url: "#resume" },
+    { title: "Resume", url: "/assets/resume.pdf" },
     { title: "Contact", url: "#contact" }
 ]
 
@@ -72,7 +72,7 @@ export default function MainHeader(props: Props): ReactElement {
                         <nav className={styles.navWrapper}>
                             {navLinks.map((link, i) => {
                                 return (
-                                    <a href={link.url} key={i} className={styles.navLink}>{link.title}</a>
+                                    <a href={link.url} target={/#/.test(link.url) ? "_self" : "_blank"} rel="noreferrer" key={i} className={styles.navLink}>{link.title}</a>
                                 )
                             })}
                         </nav>
