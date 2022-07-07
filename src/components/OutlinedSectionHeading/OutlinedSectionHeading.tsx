@@ -15,6 +15,9 @@ export default function OutlinedSectionHeading(props: Props) {
   useEffect(() => {
     document.addEventListener("scroll", parallaxHeading);
 
+    // make initial parallax
+    parallaxHeading();
+
     return () => document.removeEventListener("scroll", parallaxHeading);
   }, [])
 
