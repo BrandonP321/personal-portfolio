@@ -91,19 +91,22 @@
 
         .btnsWrapper {
             display: flex;
-            margin-top: 4rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
 
             @include screenMobile() {
-                margin-top: 1.5rem;
+                margin-top: 0.5rem;
             }
             
             a {
                 @include blurbFont();
                 position: relative;
+                margin-top: 1rem;
                 color: rgba($color-primary, .8);
+                white-space: nowrap;
                 transition: color .2s;
 
-                &:first-child {
+                &:not(&:last-child) {
                     margin-right: 2rem;
                 }
 

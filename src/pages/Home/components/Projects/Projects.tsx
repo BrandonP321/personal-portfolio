@@ -42,6 +42,12 @@ export default function Projects(props: Props) {
                   {p.repoUrl &&
                     <a href={p.repoUrl} target={"_blank"} rel={"noreferrer"}>GitHub Repo <FontAwesomeIcon icon={faArrowRight} /></a>
                   }
+                  {p.demoUrl &&
+                    <a href={p.demoUrl} target={"_blank"} rel={"noreferrer"}>View Demo <FontAwesomeIcon icon={faArrowRight} /></a>
+                  }
+                  {p.installUrl &&
+                    <a href={p.installUrl} target={"_blank"} rel={"noreferrer"}>Install App <FontAwesomeIcon icon={faArrowRight} /></a>
+                  }
                 </div>
               </div>
               <a
