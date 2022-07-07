@@ -44,6 +44,7 @@ export default function MainFooter(props: Props): ReactElement {
                                         url={s.url}
                                         className={styles.link}
                                         icon={s.icon}
+                                        title={s.title}
                                     />
                                 )
                             })}
