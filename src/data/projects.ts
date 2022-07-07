@@ -58,7 +58,7 @@ const SeasonLostProject = {
 const SeasonHauntedProject = {
     name: "Destiny 2: Season of the Haunted",
     descLong: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    descShort: "Product page for the 17th season of Destiny 2.  Leverages CMS content types, mapped to specific React components, to procedurally render large chunks of content with minimal additional CSS styling required.",
+    descShort: "Product page for the 17th season of Destiny 2.  Leverages CMS content types, which map to specific React components, to procedurally render large chunks of content with minimal additional CSS styling required.",
     siteUrl: "https://www.bungie.net/SeasonOfTheHaunted",
     image: SeasonHauntedImg,
     repoUrl: "",
