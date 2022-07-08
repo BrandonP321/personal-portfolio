@@ -6,11 +6,12 @@ import { socials } from '../../data/socials';
 import { WindowUtils } from '../../utils/WindowUtils';
 import FloatingBtn from '../FloatingBtn/FloatingBtn';
 import styles from "./MainHeader.module.scss";
+import resumePdf from "../../media/pdf/resume.pdf"
 
 const navLinks = [
     { title: "Projects", url: "#projects" },
     { title: "Skills", url: "#skills" },
-    { title: "Resume", url: "/assets/resume.pdf" },
+    { title: "Resume", url: resumePdf },
     { title: "Contact", url: "#contact" }
 ]
 
