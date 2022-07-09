@@ -13,7 +13,6 @@ export default function Hero(props: Props) {
     return (
         <div className={styles.hero}>
             <div className={styles.contentWrapper} style={{ backgroundImage: `url(${symbolBg}), url(${symbolBgSmall})` }}>
-                {/* <div className={styles.heroBg} /> */}
                 <div className={styles.textWrapper}>
                     <h1 dangerouslySetInnerHTML={{ __html: loc.title }} />
                     <p className={styles.blurb}>{loc.blurb}</p>

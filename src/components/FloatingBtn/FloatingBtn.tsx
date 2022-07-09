@@ -11,6 +11,9 @@ type Props = {
     title?: string;
 }
 
+/**
+ * Square btn with centered icon for content and glow animation on hover
+ */
 export default function FloatingBtn(props: Props) {
     const { url, className, icon, title } = props;
 

@@ -18,6 +18,7 @@ export default function Projects(props: Props) {
         />
 
         {projects.map((p, i) => {
+          // reverse flex-direction of every other project block
           const isReverseFlex = i % 2 !== 0;
 
           return (

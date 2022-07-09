@@ -1,10 +1,3 @@
-import { faEnvelope, faPaperPlane } from '@fortawesome/pro-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGit, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import {} from "@fortawesome/free-regular-svg-icons";
-import {} from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/pro-solid-svg-icons";
-import {} from "@fortawesome/pro-regular-svg-icons"
 import React, { ReactElement } from 'react'
 import styles from "./MainFooter.module.scss";
 import loc from "../../data/localization/Footer.json";

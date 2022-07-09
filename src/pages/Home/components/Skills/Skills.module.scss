@@ -21,10 +21,6 @@
             font-size: 21vw;
         }
     }
-
-    @include screenTiny() {
-        // top: 2rem;
-    }
 }
 
 .sectionContent {
@@ -52,10 +48,6 @@
     
         @include screenTiny() {
         }
-    }
-
-    &.bottom {
-
     }
 }
 

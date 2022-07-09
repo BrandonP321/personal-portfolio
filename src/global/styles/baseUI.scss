@@ -65,40 +65,24 @@ $content-max-width: 100rem;
 @mixin customScrollBar() {
     &::-webkit-scrollbar {
         width: 1rem;
-    
-        @include screenMobile() {
-            // width: initial;
-        }
     }
     
     &::-webkit-scrollbar-track {
         background-color: #38393e;
-    
-        @include screenMobile() {
-            // background-color: initial;
-        }
     }
     
     &::-webkit-scrollbar-thumb {
         background-color: rgba(#5d5e62, .7);
         transition: all .2s;
         border-radius: 1rem;
-    
-        @include screenMobile() {
-            // border-radius: initial;
-            // background-color: initial;
-        }
         
         &:hover {
             background-color: rgba(#5d5e62, 1);
-    
-            @include screenMobile() {
-                // background-color: unset;
-            }
         }
     }
 }
 
+/* Hides the scrollbar for a given element */
 @mixin hiddenScrollBar() {
     &::-webkit-scrollbar {
         display: none;

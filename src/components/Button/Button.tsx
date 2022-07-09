@@ -7,9 +7,13 @@ type ButtonProps = {
     url?: string;
     onClick?: () => void;
     className?: string;
+    /** Optional animation on button hover */
     animate?: boolean;
 };
 
+/**
+ * Universal Button component that renders either an <a> or <button> element based on the props passed in
+ */
 export default function Button(props: ButtonProps) {
     const { children, url, onClick, className, animate } = props;
 
@@ -21,7 +25,7 @@ export default function Button(props: ButtonProps) {
 
     const innerContent = (
         <>
-            <div className={classNames(styles.btnBg, {[styles.animate]: animate})}/>
+            <div className={classNames(styles.btnBg, { [styles.animate]: animate })} />
             <div className={styles.text}>
                 {children}
             </div>
@@ -35,5 +39,5 @@ export default function Button(props: ButtonProps) {
                 : <button {...btnAttributes}>{innerContent}</button>
             }
         </>
-  );
+    );
 }

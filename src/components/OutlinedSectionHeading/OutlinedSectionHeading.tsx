@@ -4,10 +4,14 @@ import styles from "./OutlinedSectionHeading.module.scss";
 
 type Props = {
   heading: string;
+  /* Side of parent heading should stick to */
   alignment?: "left" | "right";
   className?: string;
 };
 
+/**
+ * Section heading that parallaxes with page scroll
+ */
 export default function OutlinedSectionHeading(props: Props) {
   const [transform, setTransform] = useState("");
   const wrapperRef = useRef<HTMLDivElement>(null);

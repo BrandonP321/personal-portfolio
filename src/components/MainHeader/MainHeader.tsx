@@ -20,6 +20,7 @@ interface Props {
 }
 
 export default function MainHeader(props: Props): ReactElement {
+    /* Scroll offset point at which header bg should be visible */
     const offsetToShowBg = 100;
 
     const [showBg, setShowBg] = useState(window.scrollY >= offsetToShowBg);
@@ -27,6 +28,7 @@ export default function MainHeader(props: Props): ReactElement {
 
     useEffect(() => {
         document.addEventListener("scroll", handleScroll);
+        // make initial check for whether or not to show header bg
         handleScroll();
 
         return () => document.removeEventListener("scroll", handleScroll);

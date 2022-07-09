@@ -6,12 +6,16 @@ import { WindowUtils } from '../../utils/WindowUtils';
 import styles from "./Modal.module.scss";
 
 type Props = {
+    /* If true, fades in full screen modal */
     show: boolean;
     children: ReactNode;
     className?: string;
     hideModal: () => void;
 }
 
+/**
+ * Wrapper for content that should be displayed in a modal
+ */
 export default function Modal(props: Props) {
     const { show, children, className, hideModal } = props;
 
@@ -24,8 +28,10 @@ export default function Modal(props: Props) {
 
     useEffect(() => {
         if (!show) {
+            // start fading out modal
             setIsFadingOut(true);
             setTimeout(() => {
+                // once modal is fully invisible, return page to normal state
                 hideModal()
                 setShowModal(false);
                 setIsFadingOut(false);

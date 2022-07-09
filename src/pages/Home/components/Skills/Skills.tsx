@@ -7,16 +7,19 @@ import { SkillGroups, TSkillGroup } from '../../../../data/skills';
 type Props = {};
 
 export default function Skills(props: Props) {
+    /* Index of currently selected skill */
     const [selectedSkill, setSelectedSkillState] = useState(0);
     const selectedSkillRef = useRef(0);
     const setSelectedSkill = (index: number) => {
         setSelectedSkillState(index);
         selectedSkillRef.current = index;
     }
+    /* Height of current slide, used to adjust height of section */
     const [currentSlideHeight, setCurrentSlideHeight] = useState(0);
     // number of skill images that have been loaded in the first slide of the carousel
     const loadedSkillImagesCount = useRef(0);
 
+    /* Refs for each slide in the skills carousel */
     const skillSlideRefs = useRef<(HTMLDivElement | null)[]>(Array(SkillGroups.length).fill(null));
 
     /* Updates bottom padding of section based on the current height of the skills carousel */
@@ -25,15 +28,18 @@ export default function Skills(props: Props) {
         currentSlide && setCurrentSlideHeight(currentSlide.clientHeight);
     }, []);
 
+    /* Each time a skill image is rendered, increment number of images loaded */
     const handleSkillImageLoad = () => {
         loadedSkillImagesCount.current++;
 
+        // if all images are now loaded, update section height state again
         if (loadedSkillImagesCount.current >= SkillGroups[0].skillImages.length) {
             updateSectionPadding();
         }
     }
 
     useEffect(() => {
+        /* Make sure section height adjusts to fit carousel content when winow is resized */
         window.addEventListener("resize", updateSectionPadding);
 
         return () => {
@@ -41,6 +47,7 @@ export default function Skills(props: Props) {
         }
     }, [updateSectionPadding])
 
+    /* Update section height each time carousel slide is changed */
     useEffect(() => {
         updateSectionPadding();
     }, [selectedSkill, updateSectionPadding])
