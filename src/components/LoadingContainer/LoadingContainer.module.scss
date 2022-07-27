@@ -1,0 +1,44 @@
+@import "../../global/styles/baseUI.scss";
+
+$animDuration: 2s;
+
+.loadingContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-body-bg-dark;
+    z-index: 1000000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .icon {
+        width: 50%;
+        max-width: 10rem;
+        animation: LogoBounce $animDuration 0.25s forwards ease-in-out;
+    }
+}
+
+@keyframes LogoBounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}

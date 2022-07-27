@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import "destyle.css";
 import './App.scss';
 import Home from './pages/Home/Home';
+import LoadingContainer from './components/LoadingContainer/LoadingContainer';
 
 function App() {
   return (
     <div>
+      <LoadingContainer/>
       <Router>
         <Routes>
           <Route path={"/"} element={<Home/>}/>
