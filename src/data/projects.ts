@@ -4,6 +4,7 @@ import freeToPlayImg from "../media/img/projects/free_to_play_project.jpg";
 import seasonSplicerImg from "../media/img/projects/s14_project.jpg";
 import spotifyCloneImg from "../media/img/projects/spotify_clone_project.jpg";
 import portfolioImg from "../media/img/projects/portfolio_project.jpg";
+import chessImg from "../media/img/projects/chess_project.jpg";
 
 type TProject = {
     name: string;
@@ -71,6 +72,15 @@ const PortfolioProject = {
     eyebrow: "React, TypeScript, SCSS, AWS"
 }
 
+const ChessProject = {
+    name: "1-2-3 Chess",
+    descShort: "This was one of the first projects I built after graduating from the full-stack web development bootcamp at the University of Washington.  While it doesn't reflect my most up to date skills, it serves as a reflection of where my skills were at 2 years ago to show how much I've learned.",
+    siteUrl: "https://brandonp321.github.io/chess-game",
+    image: chessImg,
+    repoUrl: "https://github.com/BrandonP321/chess-game",
+    eyebrow: "React, Express, WebSocket, Bootstrap, Heroku"
+}
+
 export const projects: TProject[] = [
-    SplicerProject, SpotifyCloneProject, PortfolioProject, SeasonHauntedProject, F2PProject
+    SplicerProject, SpotifyCloneProject, ChessProject, PortfolioProject, SeasonHauntedProject, F2PProject
 ]
