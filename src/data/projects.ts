@@ -5,6 +5,7 @@ import seasonSplicerImg from "../media/img/projects/s14_project.jpg";
 import spotifyCloneImg from "../media/img/projects/spotify_clone_project.jpg";
 import portfolioImg from "../media/img/projects/portfolio_project.jpg";
 import chessImg from "../media/img/projects/chess_project.jpg";
+import lightfallImg from "../media/img/projects/lightfall_project.jpg";
 
 type TProject = {
     name: string;
@@ -16,6 +17,15 @@ type TProject = {
     installUrl?: string;
     image: string;
     eyebrow: string;
+}
+
+const LightfallProject = {
+    name: "Destiny 2: Lightfall",
+    descShort: "Product page for the new Destiny expansion, Lightfall.  Features engaging content through the usage of interactive features such as image parallaxing via both mouse and scroll events.",
+    siteUrl: "https://bungie.net/Lightfall",
+    image: lightfallImg,
+    repoUrl: "",
+    eyebrow: "React, TypeScript, SCSS"
 }
 
 const SplicerProject = {
@@ -82,5 +92,5 @@ const ChessProject = {
 }
 
 export const projects: TProject[] = [
-    SplicerProject, SpotifyCloneProject, ChessProject, PortfolioProject, SeasonHauntedProject, F2PProject
+    LightfallProject, SplicerProject, SpotifyCloneProject, ChessProject, PortfolioProject, SeasonHauntedProject, F2PProject
 ]
