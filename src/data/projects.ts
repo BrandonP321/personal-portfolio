@@ -92,5 +92,5 @@ const ChessProject = {
 }
 
 export const projects: TProject[] = [
-    LightfallProject, SplicerProject, SpotifyCloneProject, ChessProject, PortfolioProject, SeasonHauntedProject, F2PProject
+    LightfallProject, SplicerProject, SpotifyCloneProject, PortfolioProject, ChessProject, SeasonHauntedProject, F2PProject
 ]
