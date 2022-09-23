@@ -6,6 +6,7 @@ import spotifyCloneImg from "../media/img/projects/spotify_clone_project.jpg";
 import portfolioImg from "../media/img/projects/portfolio_project.jpg";
 import chessImg from "../media/img/projects/chess_project.jpg";
 import lightfallImg from "../media/img/projects/lightfall_project.jpg";
+import goalImg from "../media/img/projects/goal_tracker_project.jpg";
 
 type TProject = {
     name: string;
@@ -91,6 +92,15 @@ const ChessProject = {
     eyebrow: "React, Express, WebSocket, Bootstrap, Heroku"
 }
 
+const GoalsProject = {
+    name: "Leaps 'n' Bounds",
+    descShort: "Web app for managing and tracking your goals.  This is my most recent full-stack project, created for the purpose of demonstrating my most up-to-date skills as a full-stack developer.",
+    siteUrl: "https://main.d2ygyd34acbf9c.amplifyapp.com",
+    repoUrl: "https://github.com/BrandonP321/goal-tracker",
+    image: goalImg,
+    eyebrow: "React, SCSS, Redux, TypeScript, Express, MongoDB, AWS & Heroku, JWTs, Monorepo & Yarn Workspaces"
+}
+
 export const projects: TProject[] = [
-    LightfallProject, SplicerProject, SpotifyCloneProject, PortfolioProject, ChessProject, SeasonHauntedProject, F2PProject
+    LightfallProject, GoalsProject, SplicerProject, SpotifyCloneProject, PortfolioProject, SeasonHauntedProject, F2PProject
 ]
