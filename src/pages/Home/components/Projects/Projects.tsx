@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { faArrowRight } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import OutlinedSectionHeading from '../../../../components/OutlinedSectionHeading/OutlinedSectionHeading';
 import { projects } from '../../../../data/projects';
 import styles from "./Projects.module.scss";
+import { useWebp } from '../../../../utils/helpers';
 
 type Props = {};
 
 export default function Projects(props: Props) {
+  const supportsWebp = useWebp();
+
   return (
     <div className={styles.projects}>
       <div className={styles.sectionContent}>
@@ -59,7 +62,7 @@ export default function Projects(props: Props) {
               >
                 <div className={styles.tiltedBg} />
                 <div className={styles.innerImgWrapper}>
-                  <img className={styles.projectImg} src={p.image} alt={p.name} />
+                  <img className={styles.projectImg} src={supportsWebp ? p.webpImage : p.image} alt={p.name} />
                 </div>
               </a>
             </div>

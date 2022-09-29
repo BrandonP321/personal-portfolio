@@ -27,7 +27,7 @@ export default function LoadingContainer(props: LoadingContainerProps) {
 
     return (
         <div className={classNames(styles.loadingContainer, {[styles.show]: show})}>
-            <img src={codeLogo} className={styles.icon}/>
+            <img src={codeLogo} className={styles.icon} alt={"HTML code symbol"}/>
         </div>
     )
 }
