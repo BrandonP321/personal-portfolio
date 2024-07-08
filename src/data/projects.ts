@@ -32,8 +32,7 @@ type TProject = {
 
 const UtkProject: TProject = {
   name: "Project UTK (Startup)",
-  eyebrow:
-    "React, TypeScript, Express.js, AWS, Yarn Workspaces MonoRepo, Redux, SCSS, JWTs",
+  eyebrow: "2024",
   image: utkProjectImg,
   webpImage: utkProjectImgWebp,
   repoUrl: "https://github.com/BrandonP321/project-utk",
@@ -49,7 +48,7 @@ const LightfallProject = {
   image: lightfallImg,
   webpImage: lightfallImgWebp,
   repoUrl: "",
-  eyebrow: "React, TypeScript, SCSS",
+  eyebrow: "2021",
 };
 
 const SplicerProject = {
@@ -60,17 +59,7 @@ const SplicerProject = {
   image: seasonSplicerImg,
   webpImage: seasonSplicerImgWebp,
   repoUrl: "",
-  eyebrow: "React, TypeScript, SCSS",
-};
-
-const F2PProject = {
-  name: "Destiny 2: Free To Play",
-  descShort: "Landing page for Destiny 2.",
-  siteUrl: "https://bungie.net/7/en/Destiny/FreeToPlay",
-  image: freeToPlayImg,
-  webpImage: freeToPlayImgWebp,
-  repoUrl: "",
-  eyebrow: "React, TypeScript, SCSS",
+  eyebrow: "2021",
 };
 
 const SpotifyCloneProject = {
@@ -82,18 +71,7 @@ const SpotifyCloneProject = {
   webpImage: spotifyCloneImgWebp,
   repoUrl: "https://github.com/BrandonP321/spotify-clone",
   installUrl: "https://github.com/BrandonP321/spotify-clone#app-install",
-  eyebrow: "React Native, TypeScript, Redux, Express",
-};
-
-const SeasonHauntedProject = {
-  name: "Destiny 2: Season of the Haunted",
-  descShort:
-    "Product page for the 17th season of Destiny 2.  Leverages CMS content types, which map to specific React components, to procedurally render large chunks of content with minimal additional CSS styling required.",
-  siteUrl: "https://www.bungie.net/SeasonOfTheHaunted",
-  image: SeasonHauntedImg,
-  webpImage: SeasonHauntedImgWebp,
-  repoUrl: "",
-  eyebrow: "React, TypeScript, SCSS",
+  eyebrow: "2022",
 };
 
 const PortfolioProject = {
@@ -104,17 +82,7 @@ const PortfolioProject = {
   image: portfolioImg,
   webpImage: portfolioImgWebp,
   repoUrl: "https://github.com/BrandonP321/personal-portfolio",
-  eyebrow: "React, TypeScript, SCSS, AWS",
-};
-
-const GoalsProject = {
-  name: "Leaps 'n' Bounds",
-  descShort: "Web app for managing and tracking your goals.  ",
-  repoUrl: "https://github.com/BrandonP321/goal-tracker",
-  image: goalImg,
-  webpImage: goalImgWebp,
-  eyebrow:
-    "React, SCSS, Redux, TypeScript, Express, MongoDB, AWS & Heroku, JWTs, Monorepo & Yarn Workspaces",
+  eyebrow: "2022",
 };
 
 const PersonaVerseProject: TProject = {
@@ -123,8 +91,7 @@ const PersonaVerseProject: TProject = {
   name: "PersonaVerse",
   descShort:
     "Ever wondered what it would be like to chat with Einstein or your favorite book character? This project used the Chat GPT API to let users have those engaging conversations. Although it's no longer active, you can still visit the home page to see what it was all about.",
-  eyebrow:
-    "React, TypeScript, Stripe API, SCSS, AWS, JWTs, Yarn Workspaces MonoRepo, Express, Redux",
+  eyebrow: "2023",
   siteUrl: "https://personaverse.com",
   repoUrl: "https://github.com/BrandonP321/celeb-chat",
 };
